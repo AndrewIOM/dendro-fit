@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>EndConditions - Bristlecone</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content=""/>
+    <meta name="author" content="Andrew Martin"/>
+
+    <script src="https://code.jquery.com/jquery-1.8.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.8.23/jquery-ui.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/js/bootstrap.min.js"></script>
+    <link href="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/css/bootstrap-combined.min.css" rel="stylesheet"/>
+
+    <link type="text/css" rel="stylesheet" href="/bristlecone/content/style.css" />
+    <script type="text/javascript" src="/bristlecone/content/tips.js"></script>
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+      <div class="masthead">
+        <ul class="nav nav-pills pull-right">
+          <li><a href="http://fsharp.org">fsharp.org</a></li>
+          <li><a href="https://github.com/AndrewIOM/bristlecone">github page</a></li>
+        </ul>
+        <h3 class="muted"><a href="/bristlecone/index.html">Bristlecone</a></h3>
+      </div>
+      <hr />
+      <div class="row">
+        <div class="span9" id="main">
+          
+
+
+
+<h1>EndConditions</h1>
+<p>
+  <span>Namespace: Bristlecone.Optimisation</span><br />
+  </p>
+<div class="xmldoc">
+</div>
+
+<!-- Render nested types and modules, if there are any -->
+
+  <h3>Functions and values</h3>
+  <table class="table table-bordered member-list">
+    <thead>
+      <tr><td>Function or value</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '149', 149)" onmouseover="showTip(event, '149', 149)">
+            afterIteration iteration results
+          </code>
+          <div class="tip" id="149">
+            <strong>Signature:</strong> iteration:int -&gt; results:Solution&lt;float&gt; list -&gt; bool<br />
+                                  </div>
+        </td>
+        <td class="xmldoc">
+                      <a href="https://github.com/AndrewIOM/bristlecone/tree/master/src/Bristlecone/Optimisation.fs#L17-17" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>End the optimisation procedure when a minimum number of iterations is exceeded.</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '150', 150)" onmouseover="showTip(event, '150', 150)">
+            convergence thin chainCount
+          </code>
+          <div class="tip" id="150">
+            <strong>Signature:</strong> thin:int -&gt; chainCount:int -&gt; EndCondition&lt;float&gt;<br />
+                                  </div>
+        </td>
+        <td class="xmldoc">
+                      <a href="https://github.com/AndrewIOM/bristlecone/tree/master/src/Bristlecone/Optimisation.fs#L55-55" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Convergence of results using the Gelman-Rubin Rhat statistic.
+<em> <code>thin</code> - Only test for convergence at multiples of the following intervals (when all chains are ready).
+</em> <code>chainCount</code> - The number of chains to test for convergence. This makes the agent wait until results for all chains are in.</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '151', 151)" onmouseover="showTip(event, '151', 151)">
+            stationarySquaredJumpDistance
+          </code>
+          <div class="tip" id="151">
+            <strong>Signature:</strong> EndCondition&lt;float&gt;<br />
+                                  </div>
+        </td>
+        <td class="xmldoc">
+                      <a href="https://github.com/AndrewIOM/bristlecone/tree/master/src/Bristlecone/Optimisation.fs#L49-49" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>True if there is no significant slope in mean squared jumping distances (MSJD),
+binned per 200 iterations and a regression of five bins.</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '152', 152)" onmouseover="showTip(event, '152', 152)">
+            stationarySquaredJumpDistance&#39;(...)
+          </code>
+          <div class="tip" id="152">
+            <strong>Signature:</strong> fixedBin:int -&gt; pointsRequired:int -&gt; results:Solution&lt;float&gt; list -&gt; bool<br />
+                                  </div>
+        </td>
+        <td class="xmldoc">
+                      <a href="https://github.com/AndrewIOM/bristlecone/tree/master/src/Bristlecone/Optimisation.fs#L26-26" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>An <code>EndCondition</code> that calculates that segregates the most recent n results into
+five bins, and runs a regression to detect a temporal variation in the mean
+squared jumping distance (MSJD). The significance of the slope coefficient of a linear
+regression is assessed to determine if the MSJD is increasing through time for every
+parameter sequentially: if all p-values are &gt;0.1, then the <code>EndCondition</code> is true.</p>
+
+
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+        </div>
+        <div class="span3">
+          <img src="/bristlecone/img/logo.png" alt="F# Project" style="width:150px;margin:10px" />  
+          <ul class="nav nav-list" id="menu" style="margin-top: 20px;">
+            <li class="nav-header">Bristlecone</li>
+            <li><a href="/bristlecone/index.html">Home page</a></li>
+            <li class="divider"></li>
+            <li><a href="http://nuget.org/packages/Bristlecone">Get Library via NuGet</a></li>
+            <li><a href="https://github.com/AndrewIOM/bristlecone">Source Code on GitHub</a></li>
+            <li><a href="/bristlecone/license.html">License</a></li>
+            <li><a href="/bristlecone/release-notes.html">Release Notes</a></li>
+            
+            <li class="nav-header">Getting started</li>
+            <li><a href="/bristlecone/tutorial.html">Sample tutorial</a></li>
+
+            <li class="nav-header">Documentation</li>
+            <li><a href="/bristlecone/reference/index.html">API Reference</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <a href="https://github.com/AndrewIOM/bristlecone"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub"/></a>
+  </body>
+  </html>

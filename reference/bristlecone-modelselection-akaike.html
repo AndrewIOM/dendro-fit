@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Akaike - Bristlecone</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content=""/>
+    <meta name="author" content="Andrew Martin"/>
+
+    <script src="https://code.jquery.com/jquery-1.8.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.8.23/jquery-ui.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/js/bootstrap.min.js"></script>
+    <link href="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/css/bootstrap-combined.min.css" rel="stylesheet"/>
+
+    <link type="text/css" rel="stylesheet" href="/bristlecone/content/style.css" />
+    <script type="text/javascript" src="/bristlecone/content/tips.js"></script>
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+      <div class="masthead">
+        <ul class="nav nav-pills pull-right">
+          <li><a href="http://fsharp.org">fsharp.org</a></li>
+          <li><a href="https://github.com/AndrewIOM/bristlecone">github page</a></li>
+        </ul>
+        <h3 class="muted"><a href="/bristlecone/index.html">Bristlecone</a></h3>
+      </div>
+      <hr />
+      <div class="row">
+        <div class="span9" id="main">
+          
+
+
+
+<h1>Akaike</h1>
+<p>
+  <span>Namespace: Bristlecone.ModelSelection</span><br />
+  </p>
+<div class="xmldoc">
+</div>
+
+<!-- Render nested types and modules, if there are any -->
+
+  <h3>Functions and values</h3>
+  <table class="table table-bordered member-list">
+    <thead>
+      <tr><td>Function or value</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '130', 130)" onmouseover="showTip(event, '130', 130)">
+            aic k logLikelihood
+          </code>
+          <div class="tip" id="130">
+            <strong>Signature:</strong> k:int -&gt; logLikelihood:float&lt;MeasureOne&gt; -&gt; float&lt;MeasureOne&gt;<br />
+                                  </div>
+        </td>
+        <td class="xmldoc">
+                      <a href="https://github.com/AndrewIOM/bristlecone/tree/master/src/Bristlecone/ModelSelection.fs#L13-13" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p><strong>Description</strong>
+The Akaike information criterion, a standardised index of model fit quality for models that have different numbers of parameters.
+<strong>Parameters</strong>
+<em> <code>k</code> - The number of parameters within the model in question.
+</em> <code>logLikelihood</code> - a <code>float</code> representing the minimum log-likelihood achieved for the model in question.</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '131', 131)" onmouseover="showTip(event, '131', 131)">
+            aicc n k logLikelihood
+          </code>
+          <div class="tip" id="131">
+            <strong>Signature:</strong> n:int -&gt; k:int -&gt; logLikelihood:float&lt;MeasureOne&gt; -&gt; float&lt;MeasureOne&gt;<br />
+                                  </div>
+        </td>
+        <td class="xmldoc">
+                      <a href="https://github.com/AndrewIOM/bristlecone/tree/master/src/Bristlecone/ModelSelection.fs#L29-29" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p><strong>Description</strong>
+The Akaike information criterion, corrected for small sample sizes.
+It represents standardised index of model fit quality for models that have different numbers of parameters.
+<strong>Assumptions</strong>
+Your model must adhere to the following assumptions:
+- Univariate
+- Linear in parameters
+- Normally-distributed residuals
+<strong>Parameters</strong>
+<em> <code>n</code> - The sample size
+</em> <code>k</code> - The number of parameters within the model in question.
+* <code>logLikelihood</code> - a <code>float</code> representing the minimum log-likelihood achieved for the model in question.</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '132', 132)" onmouseover="showTip(event, '132', 132)">
+            akaikeWeights(models)
+          </code>
+          <div class="tip" id="132">
+            <strong>Signature:</strong> models:seq&lt;EstimationResult&gt; -&gt; seq&lt;EstimationResult * float&lt;MeasureOne&gt;&gt;<br />
+                                  </div>
+        </td>
+        <td class="xmldoc">
+                      <a href="https://github.com/AndrewIOM/bristlecone/tree/master/src/Bristlecone/ModelSelection.fs#L53-53" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p><strong>Description</strong>
+Akaike weights for a set of model results.
+The weights can be directly interpreted as conditional probabilities for each model.</p>
+<p><strong>Output Type</strong>
+<em> A `seq&lt;EstimationResult </em> float&gt;` of estimation results paired to their Akaike weights.</p>
+<p><strong>Exceptions</strong>
+* <code>ArgumentException</code> - occurs when there are no observations within an estimation result.</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '133', 133)" onmouseover="showTip(event, '133', 133)">
+            akaikeWeights&#39; n modelResults
+          </code>
+          <div class="tip" id="133">
+            <strong>Signature:</strong> n:int -&gt; modelResults:seq&lt;float&lt;MeasureOne&gt; * int&gt; -&gt; seq&lt;float&lt;MeasureOne&gt;&gt;<br />
+                                  </div>
+        </td>
+        <td class="xmldoc">
+                      <a href="https://github.com/AndrewIOM/bristlecone/tree/master/src/Bristlecone/ModelSelection.fs#L35-35" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+        </div>
+        <div class="span3">
+          <img src="/bristlecone/img/logo.png" alt="F# Project" style="width:150px;margin:10px" />  
+          <ul class="nav nav-list" id="menu" style="margin-top: 20px;">
+            <li class="nav-header">Bristlecone</li>
+            <li><a href="/bristlecone/index.html">Home page</a></li>
+            <li class="divider"></li>
+            <li><a href="http://nuget.org/packages/Bristlecone">Get Library via NuGet</a></li>
+            <li><a href="https://github.com/AndrewIOM/bristlecone">Source Code on GitHub</a></li>
+            <li><a href="/bristlecone/license.html">License</a></li>
+            <li><a href="/bristlecone/release-notes.html">Release Notes</a></li>
+            
+            <li class="nav-header">Getting started</li>
+            <li><a href="/bristlecone/tutorial.html">Sample tutorial</a></li>
+
+            <li class="nav-header">Documentation</li>
+            <li><a href="/bristlecone/reference/index.html">API Reference</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <a href="https://github.com/AndrewIOM/bristlecone"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub"/></a>
+  </body>
+  </html>

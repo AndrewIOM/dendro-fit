@@ -2,9 +2,9 @@
 <html lang="en">
   <head>
     <meta charset="utf-8"/>
-    <title>release-notes</title>
+    <title>MathNet - Bristlecone</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta name="description" content="Time-series modelling in F#"/>
+    <meta name="description" content=""/>
     <meta name="author" content="Andrew Martin"/>
 
     <script src="https://code.jquery.com/jquery-1.8.0.js"></script>
@@ -32,32 +32,62 @@
       <div class="row">
         <div class="span9" id="main">
           
-<h4><a name="1-0-0-alpha5-2019-03-23" class="anchor" href="#1-0-0-alpha5-2019-03-23">1.0.0-alpha5 - 2019-03-23</a></h4>
-<ul>
-<li>Release net47 and netstandard2.0 versions</li>
-<li>
-Automatic documentation (based on ProjectScaffold)
-#### 1.0.0-alpha4 - 2019-03-18
-</li>
-<li>
-BUGFIX: Fixed divide by zero error when running <code>testModel</code>
-#### 1.0.0-alpha3 - 2019-03-18
-</li>
-<li>FEATURE: Simulated Annealing optimisation</li>
-<li>FEATURE: Filzbach-style optimisation</li>
-<li>FEATURE: Run models using higher-resolution forcing data with lower-resolution observations</li>
-<li>
-FEATURE: Measurement variables
-#### 1.0.0-alpha2 - 2019-01-10
-</li>
-<li>FEATURE: More optimisation algorithms, including: automatic generalised MCMC; Metropolis-within-Gibbs; and Adaptive Metropolis-within-Gibbs</li>
-<li>
-FEATURE: Support for 'EndConditions' on optimisation algorithms. The library includes a) number of iterations, and b) linear trends in square jumping distances, as two possibilities.
-#### 1.0.0-alpha1 - 2018-12-20
-</li>
-<li>FEATURE: Initial release</li>
-</ul>
 
+
+
+<h1>MathNet</h1>
+<p>
+  <span>Namespace: Bristlecone.Integration</span><br />
+  </p>
+<div class="xmldoc">
+</div>
+
+<!-- Render nested types and modules, if there are any -->
+
+  <h3>Functions and values</h3>
+  <table class="table table-bordered member-list">
+    <thead>
+      <tr><td>Function or value</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '121', 121)" onmouseover="showTip(event, '121', 121)">
+            integrate(...)
+          </code>
+          <div class="tip" id="121">
+            <strong>Signature:</strong> log:(LogEvent -&gt; unit) -&gt; tInitial:float -&gt; tEnd:float -&gt; tStep:float -&gt; initialConditions:Map&lt;&#39;a,float&gt; -&gt; externalEnvironment:Map&lt;&#39;a,TimeIndex&lt;float&gt;&gt; -&gt; modelMap:Map&lt;&#39;a,(float -&gt; float -&gt; Map&lt;&#39;a,float&gt; -&gt; float)&gt; -&gt; Map&lt;&#39;a,float []&gt;<br />
+                          <strong>Type parameters:</strong> 'a                      </div>
+        </td>
+        <td class="xmldoc">
+                      <a href="https://github.com/AndrewIOM/bristlecone/tree/master/src/Bristlecone/Integration.fs#L120-120" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '122', 122)" onmouseover="showTip(event, '122', 122)">
+            integrate&#39;(...)
+          </code>
+          <div class="tip" id="122">
+            <strong>Signature:</strong> tInitial:float -&gt; tEnd:float -&gt; tStep:float&lt;MeasureOne&gt; -&gt; initialVector:seq&lt;float&gt; -&gt; rp:(float -&gt; float [] -&gt; &#39;?9422) -&gt; float [] []<br />
+                          <strong>Type parameters:</strong> '?9422                      </div>
+        </td>
+        <td class="xmldoc">
+                      <a href="https://github.com/AndrewIOM/bristlecone/tree/master/src/Bristlecone/Integration.fs#L114-114" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
 
         </div>
         <div class="span3">
