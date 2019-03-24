@@ -46,7 +46,7 @@
   <div class="span1"></div>
 </div>
 <h2><a name="Example" class="anchor" href="#Example">Example</a></h2>
-<p>This example demonstrates using a function defined in this sample library.</p>
+<p>This example demonstrates the layout of a model when defined in Bristlecone.</p>
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l"> 1: </span>
 <span class="l"> 2: </span>
 <span class="l"> 3: </span>
@@ -105,13 +105,11 @@
 </code></pre></td>
 </tr>
 </table>
-<p>Some more info</p>
+<p>In the above snippet, a von Bertalanffy growth model is defined as a hypothesis to test. We then create an <code>EstimationEngine</code>, which defines the methodology for model-fitting. In Bristlecone, an <code>EstimationEngine</code> is created and customised using the F# forward pipe operator (for R users this may be familiar; this concept was adapted into the dplyr %&gt;% operator). The call to <code>testModel</code> generates random test data, and assesses whether the model-fitting method can accurately estimate known parameters.</p>
 <h2><a name="Samples-amp-documentation" class="anchor" href="#Samples-amp-documentation">Samples &amp; documentation</a></h2>
-<p>The library comes with comprehensible documentation.
-It can include tutorials automatically generated from <code>*.fsx</code> files in <a href="https://github.com/AndrewIOM/Bristlecone/tree/master/docs/content">the content folder</a>.
-The API reference is automatically generated from Markdown comments in the library implementation.</p>
+<p>The API reference is automatically generated from Markdown comments in the library implementation.</p>
 <ul>
-<li><p><a href="tutorial.html">Tutorial</a> contains a further explanation of this sample library.</p></li>
+<li><p><a href="tutorial.html">Tutorial</a> covers the basic components and workflow of Bristlecone.</p></li>
 <li>
 <p><a href="reference/index.html">API Reference</a> contains automatically generated documentation for all types, modules
 and functions in the library. This includes additional brief samples on using most of the
@@ -123,9 +121,9 @@ functions.</p>
 the project and submit pull requests. If you're adding a new public API, please also
 consider adding <a href="https://github.com/AndrewIOM/Bristlecone/tree/master/docs/content">samples</a> that can be turned into a documentation. You might
 also want to read the <a href="https://github.com/AndrewIOM/Bristlecone/blob/master/README.md">library design notes</a> to understand how it works.</p>
-<p>The library is available under Public Domain license, which allows modification and
+<p>The library is available under an MIT license, which allows modification and
 redistribution for both commercial and non-commercial purposes. For more information see the
-<a href="https://github.com/AndrewIOM/Bristlecone/blob/master/LICENSE.txt">License file</a> in the GitHub repository.</p>
+<a href="https://github.com/AndrewIOM/Bristlecone/blob/master/LICENSE">License file</a> in the GitHub repository.</p>
 
 <div class="tip" id="fs1">namespace Bristlecone</div>
 <div class="tip" id="fs2">Multiple items<br />module Bristlecone<br /><br />from Bristlecone<br /><br />--------------------<br />namespace Bristlecone</div>
@@ -172,9 +170,12 @@ redistribution for both commercial and non-commercial purposes. For more informa
             <li class="nav-header">Getting started</li>
             <li><a href="/bristlecone/tutorial.html">Tutorial</a></li>
 
-            <li class="nav-header">Components</li>
+            <li class="nav-header">Defining the Problem</li>
             <li><a href="/bristlecone/model.html">Model Systems</a></li>
             <li><a href="/bristlecone/engine.html">Estimation Engine</a></li>
+
+            <li class="nav-header">Components</li>
+            <li><a href="/bristlecone/optimisation.html">Optimisation</a></li>
 
             <li class="nav-header">Dendroecology</li>
             <li><a href="/bristlecone/dendro.html">Overview</a></li>
