@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8"/>
-    <title>Parameter - Bristlecone</title>
+    <title>PlantIndividual - Bristlecone</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="description" content=""/>
     <meta name="author" content="Andrew Martin"/>
@@ -35,15 +35,10 @@
 
 
 
-<h1>Parameter</h1>
+<h1>PlantIndividual</h1>
 <p>
-  <span>Namespace: Bristlecone</span><br />
-        <span>
-          Attributes:<br />
-[&lt;AutoOpen&gt;]<br />
-          
-      </span>
-</p>
+  <span>Namespace: Bristlecone.Dendro</span><br />
+  </p>
 <div class="xmldoc">
 </div>
 
@@ -57,7 +52,7 @@
     <tbody>
         <tr>
           <td class="type-name">
-            <a href="bristlecone-parameter-constraint.html">Constraint</a>
+            <a href="bristlecone-dendro-plantindividual-plantgrowth.html">PlantGrowth</a>
           </td>
           <td class="xmldoc">
           
@@ -65,7 +60,7 @@
         </tr>
         <tr>
           <td class="type-name">
-            <a href="bristlecone-parameter-constraintmode.html">ConstraintMode</a>
+            <a href="bristlecone-dendro-plantindividual-plantindividual.html">PlantIndividual</a>
           </td>
           <td class="xmldoc">
           
@@ -73,7 +68,7 @@
         </tr>
         <tr>
           <td class="type-name">
-            <a href="bristlecone-parameter-estimation.html">Estimation</a>
+            <a href="bristlecone-dendro-plantindividual-trait.html">Trait</a>
           </td>
           <td class="xmldoc">
           
@@ -81,7 +76,7 @@
         </tr>
         <tr>
           <td class="type-name">
-            <a href="bristlecone-parameter-estimationstartingbounds.html">EstimationStartingBounds</a>
+            <a href="bristlecone-dendro-plantindividual-mm.html">mm</a>
           </td>
           <td class="xmldoc">
           
@@ -89,22 +84,7 @@
         </tr>
         <tr>
           <td class="type-name">
-            <a href="bristlecone-parameter-parameter.html">Parameter</a>
-          </td>
-          <td class="xmldoc">
-          
-          </td>
-        </tr>
-    </tbody>
-  </table>
-  <table class="table table-bordered module-list">
-    <thead>
-      <tr><td>Module</td><td>Description</td></tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td class="module-name">
-            <a href="bristlecone-parameter-pool.html">Pool</a>
+            <a href="bristlecone-dendro-plantindividual-year.html">year</a>
           </td>
           <td class="xmldoc">
           
@@ -124,35 +104,15 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '18', 18)" onmouseover="showTip(event, '18', 18)">
-            bounds(p)
+          <code onmouseout="hideTip(event, '109', 109)" onmouseover="showTip(event, '109', 109)">
+            bound(plant)
           </code>
-          <div class="tip" id="18">
-            <strong>Signature:</strong> p:Parameter -&gt; float * float<br />
+          <div class="tip" id="109">
+            <strong>Signature:</strong> plant:PlantIndividual -&gt; PlantIndividual<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/AndrewIOM/bristlecone/tree/master/src/Bristlecone/Parameter.fs#L40-40" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          <p>Bounds are always stored in a parameter in raw form.</p>
-
-
-        </td>
-      </tr>
-      <tr>
-        <td class="member-name">
-
-          <code onmouseout="hideTip(event, '19', 19)" onmouseover="showTip(event, '19', 19)">
-            create con bound1 bound2
-          </code>
-          <div class="tip" id="19">
-            <strong>Signature:</strong> con:Constraint -&gt; bound1:float -&gt; bound2:float -&gt; Parameter<br />
-                                  </div>
-        </td>
-        <td class="xmldoc">
-                      <a href="https://github.com/AndrewIOM/bristlecone/tree/master/src/Bristlecone/Parameter.fs#L34-34" class="github-link">
+                      <a href="https://github.com/AndrewIOM/bristlecone/tree/master/src/Bristlecone.Dendro/Plant.fs#L78-78" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -162,15 +122,15 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '20', 20)" onmouseover="showTip(event, '20', 20)">
-            detatchConstraint(p)
+          <code onmouseout="hideTip(event, '110', 110)" onmouseover="showTip(event, '110', 110)">
+            growthSeries(plant)
           </code>
-          <div class="tip" id="20">
-            <strong>Signature:</strong> p:Parameter -&gt; Parameter * Constraint<br />
+          <div class="tip" id="110">
+            <strong>Signature:</strong> plant:PlantGrowth -&gt; GrowthSeries&lt;MeasureOne&gt;<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/AndrewIOM/bristlecone/tree/master/src/Bristlecone/Parameter.fs#L58-58" class="github-link">
+                      <a href="https://github.com/AndrewIOM/bristlecone/tree/master/src/Bristlecone.Dendro/Plant.fs#L36-36" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -180,15 +140,15 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '21', 21)" onmouseover="showTip(event, '21', 21)">
-            getEstimate(p)
+          <code onmouseout="hideTip(event, '111', 111)" onmouseover="showTip(event, '111', 111)">
+            keepCommonYears(plant)
           </code>
-          <div class="tip" id="21">
-            <strong>Signature:</strong> p:Parameter -&gt; float<br />
+          <div class="tip" id="111">
+            <strong>Signature:</strong> plant:PlantIndividual -&gt; PlantIndividual<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/AndrewIOM/bristlecone/tree/master/src/Bristlecone/Parameter.fs#L49-49" class="github-link">
+                      <a href="https://github.com/AndrewIOM/bristlecone/tree/master/src/Bristlecone.Dendro/Plant.fs#L93-93" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -198,15 +158,15 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '22', 22)" onmouseover="showTip(event, '22', 22)">
-            setEstimate parameter value
+          <code onmouseout="hideTip(event, '112', 112)" onmouseover="showTip(event, '112', 112)">
+            removeUnit(x)
           </code>
-          <div class="tip" id="22">
-            <strong>Signature:</strong> parameter:Parameter -&gt; value:float -&gt; Parameter<br />
-                                  </div>
+          <div class="tip" id="112">
+            <strong>Signature:</strong> x:float&lt;&#39;?8862&gt; -&gt; float<br />
+                          <strong>Type parameters:</strong> '?8862                      </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/AndrewIOM/bristlecone/tree/master/src/Bristlecone/Parameter.fs#L64-64" class="github-link">
+                      <a href="https://github.com/AndrewIOM/bristlecone/tree/master/src/Bristlecone.Dendro/Plant.fs#L30-30" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -216,15 +176,15 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '23', 23)" onmouseover="showTip(event, '23', 23)">
-            transformIn con value
+          <code onmouseout="hideTip(event, '113', 113)" onmouseover="showTip(event, '113', 113)">
+            toCumulativeGrowth(plant)
           </code>
-          <div class="tip" id="23">
-            <strong>Signature:</strong> con:Constraint -&gt; value:float -&gt; float<br />
+          <div class="tip" id="113">
+            <strong>Signature:</strong> plant:PlantIndividual -&gt; PlantIndividual<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/AndrewIOM/bristlecone/tree/master/src/Bristlecone/Parameter.fs#L27-27" class="github-link">
+                      <a href="https://github.com/AndrewIOM/bristlecone/tree/master/src/Bristlecone.Dendro/Plant.fs#L73-73" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -234,15 +194,15 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '24', 24)" onmouseover="showTip(event, '24', 24)">
-            transformOut con value
+          <code onmouseout="hideTip(event, '114', 114)" onmouseover="showTip(event, '114', 114)">
+            toCumulativeGrowth&#39;(growth)
           </code>
-          <div class="tip" id="24">
-            <strong>Signature:</strong> con:Constraint -&gt; value:float -&gt; float<br />
-                                  </div>
+          <div class="tip" id="114">
+            <strong>Signature:</strong> growth:GrowthSeries&lt;&#39;?8866&gt; -&gt; GrowthSeries&lt;&#39;?8866&gt;<br />
+                          <strong>Type parameters:</strong> '?8866                      </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/AndrewIOM/bristlecone/tree/master/src/Bristlecone/Parameter.fs#L22-22" class="github-link">
+                      <a href="https://github.com/AndrewIOM/bristlecone/tree/master/src/Bristlecone.Dendro/Plant.fs#L45-45" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -252,15 +212,51 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '25', 25)" onmouseover="showTip(event, '25', 25)">
-            unwrap(arg1)
+          <code onmouseout="hideTip(event, '115', 115)" onmouseover="showTip(event, '115', 115)">
+            toRelativeGrowth(plant)
           </code>
-          <div class="tip" id="25">
-            <strong>Signature:</strong> Parameter -&gt; Constraint * ConstraintMode * Estimation<br />
+          <div class="tip" id="115">
+            <strong>Signature:</strong> plant:PlantIndividual -&gt; PlantIndividual<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/AndrewIOM/bristlecone/tree/master/src/Bristlecone/Parameter.fs#L32-32" class="github-link">
+                      <a href="https://github.com/AndrewIOM/bristlecone/tree/master/src/Bristlecone.Dendro/Plant.fs#L68-68" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '116', 116)" onmouseover="showTip(event, '116', 116)">
+            toRelativeGrowth&#39;(growth)
+          </code>
+          <div class="tip" id="116">
+            <strong>Signature:</strong> growth:GrowthSeries&lt;MeasureProduct&lt;mm,MeasureOne&gt;&gt; -&gt; GrowthSeries&lt;MeasureProduct&lt;mm,MeasureOne&gt;&gt;<br />
+                                  </div>
+        </td>
+        <td class="xmldoc">
+                      <a href="https://github.com/AndrewIOM/bristlecone/tree/master/src/Bristlecone.Dendro/Plant.fs#L55-55" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '117', 117)" onmouseover="showTip(event, '117', 117)">
+            zipEnv envName envData plant
+          </code>
+          <div class="tip" id="117">
+            <strong>Signature:</strong> envName:ShortCode -&gt; envData:TimeSeries&lt;float&gt; -&gt; plant:PlantIndividual -&gt; PlantIndividual<br />
+                                  </div>
+        </td>
+        <td class="xmldoc">
+                      <a href="https://github.com/AndrewIOM/bristlecone/tree/master/src/Bristlecone.Dendro/Plant.fs#L33-33" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>

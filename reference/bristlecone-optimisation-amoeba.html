@@ -63,6 +63,36 @@
 
   </div>
 
+  <h3>Functions and values</h3>
+  <table class="table table-bordered member-list">
+    <thead>
+      <tr><td>Function or value</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '136', 136)" onmouseover="showTip(event, '136', 136)">
+            swarm(...)
+          </code>
+          <div class="tip" id="136">
+            <strong>Signature:</strong> logger:(LogEvent -&gt; unit) -&gt; numberOfLevels:int -&gt; iterationsPerLevel:EndCondition&lt;float&gt; -&gt; numberOfAomeba:int -&gt; paramBounds:Domain -&gt; f:Objective&lt;float&gt; -&gt; Solution&lt;float&gt;<br />
+                                  </div>
+        </td>
+        <td class="xmldoc">
+                      <a href="https://github.com/AndrewIOM/bristlecone/tree/master/src/Bristlecone/Optimisation.fs#L902-902" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Optimisation heuristic that creates a swarm of amoeba (Nelder-Mead) solvers.
+The swarm proceeds for <code>numberOfLevels</code> levels, constraining the starting bounds
+at each level to the 80th percentile of the current set of best likelihoods.</p>
+
+
+        </td>
+      </tr>
+    </tbody>
+  </table>
 
         </div>
         <div class="span3">

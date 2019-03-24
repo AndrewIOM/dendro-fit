@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8"/>
-    <title>PlantIndividual - Bristlecone</title>
+    <title>PlantGrowth - Bristlecone</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="description" content=""/>
     <meta name="author" content="Andrew Martin"/>
@@ -35,33 +35,32 @@
 
 
 
-<h1>PlantIndividual</h1>
+<h1>PlantGrowth</h1>
 <p>
-  <span>Namespace: Bristlecone.Data</span><br />
-  </p>
+
+    <span>Namespace: Bristlecone.Dendro</span><br />
+        <span>Parent Module: <a href="bristlecone-dendro-plantindividual.html">PlantIndividual</a></span><br />
+    </p>
 <div class="xmldoc">
 </div>
-
-<!-- Render nested types and modules, if there are any -->
-
-  <h3>Functions and values</h3>
+  <h3>Union Cases</h3>
   <table class="table table-bordered member-list">
     <thead>
-      <tr><td>Function or value</td><td>Description</td></tr>
+      <tr><td>Union Case</td><td>Description</td></tr>
     </thead>
     <tbody>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '94', 94)" onmouseover="showTip(event, '94', 94)">
-            loadLocalEnvironmentVariable(fileName)
+          <code onmouseout="hideTip(event, '266', 266)" onmouseover="showTip(event, '266', 266)">
+            BasalArea(...)
           </code>
-          <div class="tip" id="94">
-            <strong>Signature:</strong> fileName:string -&gt; (string * TimeSeries&lt;float&gt;) list<br />
+          <div class="tip" id="266">
+            <strong>Signature:</strong> GrowthSeries&lt;MeasureProduct&lt;MeasureProduct&lt;mm,mm&gt;,MeasureOne&gt;&gt;<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/AndrewIOM/bristlecone/tree/master/src/Bristlecone.Dendro/Data.fs#L31-31" class="github-link">
+                      <a href="https://github.com/AndrewIOM/bristlecone/tree/master/src/Bristlecone.Dendro/Plant.fs#L16-16" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -71,15 +70,33 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '95', 95)" onmouseover="showTip(event, '95', 95)">
-            loadRingWidths(fileName)
+          <code onmouseout="hideTip(event, '267', 267)" onmouseover="showTip(event, '267', 267)">
+            RingWidth(...)
           </code>
-          <div class="tip" id="95">
-            <strong>Signature:</strong> fileName:string -&gt; PlantIndividual list<br />
+          <div class="tip" id="267">
+            <strong>Signature:</strong> GrowthSeries&lt;MeasureProduct&lt;mm,MeasureOne&gt;&gt;<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/AndrewIOM/bristlecone/tree/master/src/Bristlecone.Dendro/Data.fs#L13-13" class="github-link">
+                      <a href="https://github.com/AndrewIOM/bristlecone/tree/master/src/Bristlecone.Dendro/Plant.fs#L15-15" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '268', 268)" onmouseover="showTip(event, '268', 268)">
+            StemVolume(...)
+          </code>
+          <div class="tip" id="268">
+            <strong>Signature:</strong> GrowthSeries&lt;MeasureProduct&lt;MeasureProduct&lt;mm,MeasureProduct&lt;mm,mm&gt;&gt;,MeasureOne&gt;&gt;<br />
+                                  </div>
+        </td>
+        <td class="xmldoc">
+                      <a href="https://github.com/AndrewIOM/bristlecone/tree/master/src/Bristlecone.Dendro/Plant.fs#L17-17" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
