@@ -34,7 +34,7 @@
         <div class="span9" id="main">
           
 <h1><a name="Bristlecone" class="anchor" href="#Bristlecone">Bristlecone</a></h1>
-<p>Documentation</p>
+<p>Bristlecone is a library for conducting model-fitting and model-selection analyses on time-series data. The library was designed for models in ecology / biology.</p>
 <div class="row">
   <div class="span1"></div>
   <div class="span6">
@@ -47,19 +47,61 @@
 </div>
 <h2><a name="Example" class="anchor" href="#Example">Example</a></h2>
 <p>This example demonstrates using a function defined in this sample library.</p>
-<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
-<span class="l">2: </span>
-<span class="l">3: </span>
-<span class="l">4: </span>
-<span class="l">5: </span>
-<span class="l">6: </span>
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l"> 1: </span>
+<span class="l"> 2: </span>
+<span class="l"> 3: </span>
+<span class="l"> 4: </span>
+<span class="l"> 5: </span>
+<span class="l"> 6: </span>
+<span class="l"> 7: </span>
+<span class="l"> 8: </span>
+<span class="l"> 9: </span>
+<span class="l">10: </span>
+<span class="l">11: </span>
+<span class="l">12: </span>
+<span class="l">13: </span>
+<span class="l">14: </span>
+<span class="l">15: </span>
+<span class="l">16: </span>
+<span class="l">17: </span>
+<span class="l">18: </span>
+<span class="l">19: </span>
+<span class="l">20: </span>
+<span class="l">21: </span>
+<span class="l">22: </span>
+<span class="l">23: </span>
+<span class="l">24: </span>
+<span class="l">25: </span>
+<span class="l">26: </span>
+<span class="l">27: </span>
 </pre></td>
 <td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="pp">#r</span> <span class="s">&quot;Bristlecone.dll&quot;</span>
 <span class="k">open</span> <span onmouseout="hideTip(event, 'fs1', 1)" onmouseover="showTip(event, 'fs1', 1)" class="id">Bristlecone</span>
+<span class="k">open</span> <span onmouseout="hideTip(event, 'fs2', 2)" onmouseover="showTip(event, 'fs2', 2)" class="id">Bristlecone</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs3', 3)" onmouseover="showTip(event, 'fs3', 3)" class="id">ModelSystem</span>
 
-<span class="k">let</span> <span onmouseout="hideTip(event, 'fs2', 2)" onmouseover="showTip(event, 'fs2', 2)" class="id">engine</span> <span class="o">=</span>
-  <span onmouseout="hideTip(event, 'fs3', 3)" onmouseover="showTip(event, 'fs3', 3)" class="m">Bristlecone</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs4', 4)" onmouseover="showTip(event, 'fs4', 4)" class="id">mkContinuous</span>
-  <span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs3', 5)" onmouseover="showTip(event, 'fs3', 5)" class="m">Bristlecone</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs5', 6)" onmouseover="showTip(event, 'fs5', 6)" class="id">withTunedMCMC</span> <span class="pn">[</span><span class="pn">]</span>
+<span class="k">let</span> <span onmouseout="hideTip(event, 'fs4', 4)" onmouseover="showTip(event, 'fs4', 4)" class="id">hypothesis</span> <span class="o">=</span>
+
+  <span class="k">let</span> <span onmouseout="hideTip(event, 'fs5', 5)" onmouseover="showTip(event, 'fs5', 5)" class="fn">vonBertalanffy&#39;</span> <span onmouseout="hideTip(event, 'fs6', 6)" onmouseover="showTip(event, 'fs6', 6)" class="id">eta</span> <span onmouseout="hideTip(event, 'fs7', 7)" onmouseover="showTip(event, 'fs7', 7)" class="id">beta</span> <span onmouseout="hideTip(event, 'fs8', 8)" onmouseover="showTip(event, 'fs8', 8)" class="id">kappa</span> <span onmouseout="hideTip(event, 'fs9', 9)" onmouseover="showTip(event, 'fs9', 9)" class="id">mass</span> <span class="o">=</span>
+      <span onmouseout="hideTip(event, 'fs6', 10)" onmouseover="showTip(event, 'fs6', 10)" class="id">eta</span> <span class="o">*</span> <span onmouseout="hideTip(event, 'fs9', 11)" onmouseover="showTip(event, 'fs9', 11)" class="id">mass</span> <span class="o">**</span> <span onmouseout="hideTip(event, 'fs7', 12)" onmouseover="showTip(event, 'fs7', 12)" class="id">beta</span> <span class="o">-</span> <span onmouseout="hideTip(event, 'fs8', 13)" onmouseover="showTip(event, 'fs8', 13)" class="id">kappa</span> <span class="o">*</span> <span onmouseout="hideTip(event, 'fs9', 14)" onmouseover="showTip(event, 'fs9', 14)" class="id">mass</span>
+
+  <span class="k">let</span> <span onmouseout="hideTip(event, 'fs10', 15)" onmouseover="showTip(event, 'fs10', 15)" class="fn">vonBertalanffy</span> <span onmouseout="hideTip(event, 'fs11', 16)" onmouseover="showTip(event, 'fs11', 16)" class="id">p</span> <span onmouseout="hideTip(event, 'fs12', 17)" onmouseover="showTip(event, 'fs12', 17)" class="id">t</span> <span onmouseout="hideTip(event, 'fs13', 18)" onmouseover="showTip(event, 'fs13', 18)" class="id">x</span> <span onmouseout="hideTip(event, 'fs14', 19)" onmouseover="showTip(event, 'fs14', 19)" class="id">environment</span> <span class="o">=</span>
+      <span onmouseout="hideTip(event, 'fs5', 20)" onmouseover="showTip(event, 'fs5', 20)" class="fn">vonBertalanffy&#39;</span> 
+        <span class="pn">(</span><span onmouseout="hideTip(event, 'fs11', 21)" onmouseover="showTip(event, 'fs11', 21)" class="id">p</span> <span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs15', 22)" onmouseover="showTip(event, 'fs15', 22)" class="m">Pool</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs16', 23)" onmouseover="showTip(event, 'fs16', 23)" class="id">getEstimate</span> <span class="s">&quot;eta&quot;</span><span class="pn">)</span> 
+        <span class="pn">(</span><span onmouseout="hideTip(event, 'fs11', 24)" onmouseover="showTip(event, 'fs11', 24)" class="id">p</span> <span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs15', 25)" onmouseover="showTip(event, 'fs15', 25)" class="m">Pool</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs16', 26)" onmouseover="showTip(event, 'fs16', 26)" class="id">getEstimate</span> <span class="s">&quot;beta&quot;</span><span class="pn">)</span> 
+        <span class="pn">(</span><span onmouseout="hideTip(event, 'fs11', 27)" onmouseover="showTip(event, 'fs11', 27)" class="id">p</span> <span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs15', 28)" onmouseover="showTip(event, 'fs15', 28)" class="m">Pool</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs16', 29)" onmouseover="showTip(event, 'fs16', 29)" class="id">getEstimate</span> <span class="s">&quot;kappa&quot;</span><span class="pn">)</span> <span onmouseout="hideTip(event, 'fs13', 30)" onmouseover="showTip(event, 'fs13', 30)" class="id">x</span>
+
+  <span class="c">// B. Define model system</span>
+  <span class="pn">{</span> <span class="id">Equations</span>  <span class="o">=</span> <span class="pn">[</span> <span onmouseout="hideTip(event, 'fs17', 31)" onmouseover="showTip(event, 'fs17', 31)" class="fn">code</span> <span class="s">&quot;x&quot;</span><span class="pn">,</span> <span onmouseout="hideTip(event, 'fs10', 32)" onmouseover="showTip(event, 'fs10', 32)" class="fn">vonBertalanffy</span> <span class="pn">]</span> <span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs18', 33)" onmouseover="showTip(event, 'fs18', 33)" class="m">Map</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs19', 34)" onmouseover="showTip(event, 'fs19', 34)" class="id">ofList</span>
+    <span onmouseout="hideTip(event, 'fs20', 35)" onmouseover="showTip(event, 'fs20', 35)" class="fn">Likelihood</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs21', 36)" onmouseover="showTip(event, 'fs21', 36)" class="m">ModelLibrary</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs22', 37)" onmouseover="showTip(event, 'fs22', 37)" class="m">Likelihood</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs23', 38)" onmouseover="showTip(event, 'fs23', 38)" class="id">sumOfSquares</span> <span class="pn">[</span><span class="s">&quot;x&quot;</span><span class="pn">]</span>
+    <span class="id">Measures</span>   <span class="o">=</span> <span class="pn">[</span><span class="pn">]</span> <span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs18', 39)" onmouseover="showTip(event, 'fs18', 39)" class="m">Map</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs19', 40)" onmouseover="showTip(event, 'fs19', 40)" class="id">ofList</span>
+    <span class="id">Parameters</span> <span class="o">=</span> <span class="pn">[</span> <span onmouseout="hideTip(event, 'fs17', 41)" onmouseover="showTip(event, 'fs17', 41)" class="fn">code</span> <span class="s">&quot;eta&quot;</span><span class="pn">,</span>    <span onmouseout="hideTip(event, 'fs24', 42)" onmouseover="showTip(event, 'fs24', 42)" class="fn">parameter</span> <span onmouseout="hideTip(event, 'fs25', 43)" onmouseover="showTip(event, 'fs25', 43)" class="uc">Unconstrained</span>   <span class="n">0.001</span> <span class="n">1.00</span>
+                   <span onmouseout="hideTip(event, 'fs17', 44)" onmouseover="showTip(event, 'fs17', 44)" class="fn">code</span> <span class="s">&quot;beta&quot;</span><span class="pn">,</span>   <span onmouseout="hideTip(event, 'fs24', 45)" onmouseover="showTip(event, 'fs24', 45)" class="fn">parameter</span> <span onmouseout="hideTip(event, 'fs25', 46)" onmouseover="showTip(event, 'fs25', 46)" class="uc">Unconstrained</span>   <span class="n">0.001</span> <span class="n">1.00</span>
+                   <span onmouseout="hideTip(event, 'fs17', 47)" onmouseover="showTip(event, 'fs17', 47)" class="fn">code</span> <span class="s">&quot;kappa&quot;</span><span class="pn">,</span>  <span onmouseout="hideTip(event, 'fs24', 48)" onmouseover="showTip(event, 'fs24', 48)" class="fn">parameter</span> <span onmouseout="hideTip(event, 'fs25', 49)" onmouseover="showTip(event, 'fs25', 49)" class="uc">Unconstrained</span>   <span class="n">0.001</span> <span class="n">1.00</span> <span class="pn">]</span> <span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs18', 50)" onmouseover="showTip(event, 'fs18', 50)" class="m">Map</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs19', 51)" onmouseover="showTip(event, 'fs19', 51)" class="id">ofList</span> <span class="pn">}</span>
+
+<span class="k">let</span> <span onmouseout="hideTip(event, 'fs26', 52)" onmouseover="showTip(event, 'fs26', 52)" class="id">engine</span> <span class="o">=</span>
+  <span onmouseout="hideTip(event, 'fs2', 53)" onmouseover="showTip(event, 'fs2', 53)" class="m">Bristlecone</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs27', 54)" onmouseover="showTip(event, 'fs27', 54)" class="id">mkContinuous</span>
+  <span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs2', 55)" onmouseover="showTip(event, 'fs2', 55)" class="m">Bristlecone</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs28', 56)" onmouseover="showTip(event, 'fs28', 56)" class="id">withTunedMCMC</span> <span class="pn">[</span><span class="pn">]</span>
+  <span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs2', 57)" onmouseover="showTip(event, 'fs2', 57)" class="m">Bristlecone</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs29', 58)" onmouseover="showTip(event, 'fs29', 58)" class="id">testModel</span> <span onmouseout="hideTip(event, 'fs4', 59)" onmouseover="showTip(event, 'fs4', 59)" class="id">hypothesis</span>
 </code></pre></td>
 </tr>
 </table>
@@ -86,10 +128,34 @@ redistribution for both commercial and non-commercial purposes. For more informa
 <a href="https://github.com/AndrewIOM/Bristlecone/blob/master/LICENSE.txt">License file</a> in the GitHub repository.</p>
 
 <div class="tip" id="fs1">namespace Bristlecone</div>
-<div class="tip" id="fs2">val engine : EstimationEngine.EstimationEngine&lt;float,float&gt;</div>
-<div class="tip" id="fs3">Multiple items<br />module Bristlecone<br /><br />from Bristlecone<br /><br />--------------------<br />namespace Bristlecone</div>
-<div class="tip" id="fs4">val mkContinuous : EstimationEngine.EstimationEngine&lt;float,float&gt;</div>
-<div class="tip" id="fs5">val withTunedMCMC : tuning:seq&lt;Optimisation.MonteCarlo.TuneStep&lt;float&gt;&gt; -&gt; engine:EstimationEngine.EstimationEngine&lt;float,&#39;a&gt; -&gt; EstimationEngine.EstimationEngine&lt;float,&#39;a&gt;</div>
+<div class="tip" id="fs2">Multiple items<br />module Bristlecone<br /><br />from Bristlecone<br /><br />--------------------<br />namespace Bristlecone</div>
+<div class="tip" id="fs3">module ModelSystem<br /><br />from Bristlecone</div>
+<div class="tip" id="fs4">val hypothesis : ModelSystem</div>
+<div class="tip" id="fs5">val vonBertalanffy&#39; : (float -&gt; float -&gt; float -&gt; float -&gt; float)</div>
+<div class="tip" id="fs6">val eta : float</div>
+<div class="tip" id="fs7">val beta : float</div>
+<div class="tip" id="fs8">val kappa : float</div>
+<div class="tip" id="fs9">val mass : float</div>
+<div class="tip" id="fs10">val vonBertalanffy : (ParameterPool -&gt; &#39;a -&gt; float -&gt; &#39;b -&gt; float)</div>
+<div class="tip" id="fs11">val p : ParameterPool</div>
+<div class="tip" id="fs12">val t : &#39;a</div>
+<div class="tip" id="fs13">val x : float</div>
+<div class="tip" id="fs14">val environment : &#39;b</div>
+<div class="tip" id="fs15">module Pool<br /><br />from Bristlecone.Parameter</div>
+<div class="tip" id="fs16">val getEstimate : key:string -&gt; pool:ParameterPool -&gt; float</div>
+<div class="tip" id="fs17">val code : (string -&gt; ShortCode)</div>
+<div class="tip" id="fs18">Multiple items<br />module Map<br /><br />from Bristlecone<br /><br />--------------------<br />module Map<br /><br />from Microsoft.FSharp.Collections<br /><br />--------------------<br />type Map&lt;&#39;Key,&#39;Value (requires comparison)&gt; =<br />&#160;&#160;interface IReadOnlyDictionary&lt;&#39;Key,&#39;Value&gt;<br />&#160;&#160;interface IReadOnlyCollection&lt;KeyValuePair&lt;&#39;Key,&#39;Value&gt;&gt;<br />&#160;&#160;interface IEnumerable<br />&#160;&#160;interface IComparable<br />&#160;&#160;interface IEnumerable&lt;KeyValuePair&lt;&#39;Key,&#39;Value&gt;&gt;<br />&#160;&#160;interface ICollection&lt;KeyValuePair&lt;&#39;Key,&#39;Value&gt;&gt;<br />&#160;&#160;interface IDictionary&lt;&#39;Key,&#39;Value&gt;<br />&#160;&#160;new : elements:seq&lt;&#39;Key * &#39;Value&gt; -&gt; Map&lt;&#39;Key,&#39;Value&gt;<br />&#160;&#160;member Add : key:&#39;Key * value:&#39;Value -&gt; Map&lt;&#39;Key,&#39;Value&gt;<br />&#160;&#160;member ContainsKey : key:&#39;Key -&gt; bool<br />&#160;&#160;...<br /><br />--------------------<br />new : elements:seq&lt;&#39;Key * &#39;Value&gt; -&gt; Map&lt;&#39;Key,&#39;Value&gt;</div>
+<div class="tip" id="fs19">val ofList : elements:(&#39;Key * &#39;T) list -&gt; Map&lt;&#39;Key,&#39;T&gt; (requires comparison)</div>
+<div class="tip" id="fs20">type Likelihood = ParameterPool -&gt; CodedMap&lt;PredictedSeries&gt; -&gt; float</div>
+<div class="tip" id="fs21">module ModelLibrary</div>
+<div class="tip" id="fs22">module Likelihood<br /><br />from ModelLibrary</div>
+<div class="tip" id="fs23">val sumOfSquares : keys:string list -&gt; &#39;a -&gt; data:CodedMap&lt;PredictedSeries&gt; -&gt; float</div>
+<div class="tip" id="fs24">val parameter : (Constraint -&gt; float -&gt; float -&gt; Parameter)</div>
+<div class="tip" id="fs25">union case Constraint.Unconstrained: Constraint</div>
+<div class="tip" id="fs26">val engine : obj</div>
+<div class="tip" id="fs27">val mkContinuous : EstimationEngine.EstimationEngine&lt;float,float&gt;</div>
+<div class="tip" id="fs28">val withTunedMCMC : tuning:seq&lt;Optimisation.MonteCarlo.TuneStep&lt;float&gt;&gt; -&gt; engine:EstimationEngine.EstimationEngine&lt;float,&#39;a&gt; -&gt; EstimationEngine.EstimationEngine&lt;float,&#39;a&gt;</div>
+<div class="tip" id="fs29">val testModel : engine:EstimationEngine.EstimationEngine&lt;float,float&gt; -&gt; timeSeriesLength:int -&gt; startingConditions:Map&lt;ShortCode,float&gt; -&gt; iterations:Optimisation.EndCondition&lt;float&gt; -&gt; generationRules:(ShortCode * (seq&lt;float&gt; -&gt; bool)) list -&gt; addNoise:(Map&lt;ShortCode,Parameter&gt; -&gt; Map&lt;ShortCode,TimeSeries&lt;float&gt;&gt; -&gt; CodedMap&lt;TimeSeries&lt;float&gt;&gt;) -&gt; model:ModelSystem -&gt; EstimationResult * CodedMap&lt;TimeSeries&lt;float&gt;&gt; * Map&lt;ShortCode,Parameter&gt;</div>
 
         </div>
         <div class="span3">
@@ -104,7 +170,14 @@ redistribution for both commercial and non-commercial purposes. For more informa
             <li><a href="/bristlecone/release-notes.html">Release Notes</a></li>
             
             <li class="nav-header">Getting started</li>
-            <li><a href="/bristlecone/tutorial.html">Sample tutorial</a></li>
+            <li><a href="/bristlecone/tutorial.html">Tutorial</a></li>
+
+            <li class="nav-header">Components</li>
+            <li><a href="/bristlecone/model.html">Model Systems</a></li>
+            <li><a href="/bristlecone/engine.html">Estimation Engine</a></li>
+
+            <li class="nav-header">Dendroecology</li>
+            <li><a href="/bristlecone/dendro.html">Overview</a></li>
 
             <li class="nav-header">Documentation</li>
             <li><a href="/bristlecone/reference/index.html">API Reference</a></li>
